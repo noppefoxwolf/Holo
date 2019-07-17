@@ -23,22 +23,23 @@ public class AnyCaptureOutput {
     self.source = source
   }
   
-  open var connections: [AVCaptureConnection] {
+  open var connections: [AnyCaptureConnection] {
     switch source {
     case .simurator(_):
       return []
     case .output(let output):
-      return output.connections
+      return output.connections.map({ AnyCaptureConnection(source: .connection($0)) })
     }
   }
   
   @available(iOS 5.0, *)
-  open func connection(with mediaType: AVMediaType) -> AVCaptureConnection? {
+  open func connection(with mediaType: AVMediaType) -> AnyCaptureConnection? {
     switch source {
     case .simurator(_):
       return nil
     case .output(let output):
-      return output.connection(with: mediaType)
+      guard let connection = output.connection(with: mediaType) else { return nil }
+      return AnyCaptureConnection(source: .connection(connection))
     }
   }
   
