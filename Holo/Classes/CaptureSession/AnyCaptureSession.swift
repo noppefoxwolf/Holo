@@ -79,7 +79,8 @@ public class AnyCaptureSessionContainer {
   }
   
   open var sessionPreset: AVFoundation.AVCaptureSession.Preset {
-    return session.sessionPreset
+    get { return session.sessionPreset }
+    set { session.sessionPreset = newValue }
   }
   
   open var inputs: [AnyCaptureInput] {

@@ -59,12 +59,23 @@ public class AnyCaptureVideoDataOutput: AnyCaptureOutput {
   }
   
   open var videoSettings: [String : Any]! {
-    switch source {
-    case .simurator:
-      return nil
-    case .output(let output):
-      guard let output = output as? AVFoundation.AVCaptureVideoDataOutput else { return nil }
-      return output.videoSettings
+    get {
+      switch source {
+      case .simurator:
+        return nil
+      case .output(let output):
+        guard let output = output as? AVFoundation.AVCaptureVideoDataOutput else { return nil }
+        return output.videoSettings
+      }
+    }
+    set {
+      switch source {
+      case .simurator:
+        break
+      case .output(let output):
+        guard let output = output as? AVFoundation.AVCaptureVideoDataOutput else { return }
+        output.videoSettings = newValue
+      }
     }
   }
   

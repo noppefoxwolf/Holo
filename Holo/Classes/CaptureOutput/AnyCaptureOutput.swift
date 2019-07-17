@@ -22,4 +22,53 @@ public class AnyCaptureOutput {
   init(source: Source) {
     self.source = source
   }
+  
+  open var connections: [AVCaptureConnection] {
+    switch source {
+    case .simurator(_):
+      return []
+    case .output(let output):
+      return output.connections
+    }
+  }
+  
+  @available(iOS 5.0, *)
+  open func connection(with mediaType: AVMediaType) -> AVCaptureConnection? {
+    switch source {
+    case .simurator(_):
+      return nil
+    case .output(let output):
+      return output.connection(with: mediaType)
+    }
+  }
+  
+  @available(iOS 6.0, *)
+  open func transformedMetadataObject(for metadataObject: AVMetadataObject, connection: AVCaptureConnection) -> AVMetadataObject? {
+    switch source {
+    case .simurator(_):
+      return nil
+    case .output(let output):
+      return output.transformedMetadataObject(for: metadataObject, connection: connection)
+    }
+  }
+  
+  @available(iOS 7.0, *)
+  open func metadataOutputRectConverted(fromOutputRect rectInOutputCoordinates: CGRect) -> CGRect {
+    switch source {
+    case .simurator(_):
+      return .zero
+    case .output(let output):
+      return output.metadataOutputRectConverted(fromOutputRect: rectInOutputCoordinates)
+    }
+  }
+  
+  @available(iOS 7.0, *)
+  open func outputRectConverted(fromMetadataOutputRect rectInMetadataOutputCoordinates: CGRect) -> CGRect {
+    switch source {
+    case .simurator(_):
+      return .zero
+    case .output(let output):
+      return output.outputRectConverted(fromMetadataOutputRect: rectInMetadataOutputCoordinates)
+    }
+  }
 }

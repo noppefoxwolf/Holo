@@ -52,6 +52,12 @@ public class AnyCaptureDevice {
     }
   }
   
+  @available(iOS 10.0, *)
+  open class func `default`(_ deviceType: AVFoundation.AVCaptureDevice.DeviceType, for mediaType: AVMediaType?, position: AVFoundation.AVCaptureDevice.Position) -> AnyCaptureDevice? {
+    guard let mediaType = mediaType else { return nil }
+    return AnyCaptureDevice.default(for: mediaType)
+  }
+  
   public convenience init?(uniqueID deviceUniqueID: String) {
     self.init(captureDevice: AVFoundation.AVCaptureDevice.init(uniqueID: deviceUniqueID))
   }

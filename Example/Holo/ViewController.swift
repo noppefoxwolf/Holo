@@ -11,7 +11,7 @@ import AVFoundation
 
 class ViewController: UIViewController {
   private let displayLayer: AVSampleBufferDisplayLayer = .init()
-  private lazy var device = AVCaptureDevice.default(for: .video)!
+  private lazy var device = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .front)!
   private lazy var input = try! AVCaptureDeviceInput(device: device)
   private lazy var output: AVCaptureVideoDataOutput = {
     let output = AVCaptureVideoDataOutput()
@@ -37,7 +37,6 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     session.startRunning()
-    
   }
   
   override func viewDidLayoutSubviews() {
