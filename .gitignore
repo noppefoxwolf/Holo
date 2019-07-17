@@ -38,3 +38,4 @@ Carthage/Build
 Example/Pods
 *.m4v
 *.jpg
+*.xcworkspace
