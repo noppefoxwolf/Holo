@@ -1,13 +1,38 @@
-# Holo
+# Holo [beta]
 
-[![CI Status](https://img.shields.io/travis/tomoya.hirano/Holo.svg?style=flat)](https://travis-ci.org/tomoya.hirano/Holo)
+[![CI Status](https://img.shields.io/travis/noppefoxwolf/Holo.svg?style=flat)](https://travis-ci.org/noppefoxwolf/Holo)
 [![Version](https://img.shields.io/cocoapods/v/Holo.svg?style=flat)](https://cocoapods.org/pods/Holo)
 [![License](https://img.shields.io/cocoapods/l/Holo.svg?style=flat)](https://cocoapods.org/pods/Holo)
 [![Platform](https://img.shields.io/cocoapods/p/Holo.svg?style=flat)](https://cocoapods.org/pods/Holo)
 
-## Example
+## Usage 
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+It's easy to use.
+
+Add these lines to your project code.
+
+These works for replacing the implementation at the time of simulator execution.
+
+```swift
+#if targetEnvironment(simulator)
+import Holo
+typealias AVCaptureDevice = AnyCaptureDevice
+typealias AVCaptureDeviceInput = AnyCaptureDeviceInput
+typealias AVCaptureSession = AnyCaptureSessionContainer
+typealias AVCaptureVideoDataOutput = AnyCaptureVideoDataOutput
+typealias AVCaptureConnection = AnyCaptureConnection
+typealias AVCaptureVideoDataOutputSampleBufferDelegate = AnyCaptureVideoDataOutputSampleBufferDelegate
+typealias AVCaptureOutput = AnyCaptureOutput
+#endif
+```
+
+You can decide dummy camera contents.
+
+```swift
+#if targetEnvironment(simulator)
+HoloSettings.shared.mode = .video(Bundle.main.url(forResource: "video", withExtension: "mp4")!)
+#endif
+```
 
 ## Requirements
 
@@ -22,8 +47,12 @@ pod 'Holo'
 
 ## Author
 
-tomoya.hirano, tomoya.hirano@dena.com
+noppefoxwolf, noppelabs@gmail.com
 
 ## License
 
 Holo is available under the MIT license. See the LICENSE file for more info.
+
+## Thanks
+
+Example Video from [File Example](https://file-examples.com/index.php).

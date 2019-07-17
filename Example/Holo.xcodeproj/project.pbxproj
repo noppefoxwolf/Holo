@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		32AFF53C172E6124495FCDB1 /* Pods_Holo_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B35689795E8B67663D49DFE8 /* Pods_Holo_Example.framework */; };
+		37418DBD22DF782200228F33 /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 37418DBC22DF782200228F33 /* image.jpg */; };
+		37418DBF22DF783000228F33 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 37418DBE22DF783000228F33 /* video.mp4 */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -15,8 +17,6 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		7B4CEF6B2099FC1D12DCBF43 /* Pods_Holo_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11D14CB5F3E422F6B4535D9E /* Pods_Holo_Tests.framework */; };
-		D7A72E5922DF1B8F002D2920 /* fox.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7A72E5822DF1B8F002D2920 /* fox.jpg */; };
-		D7A72E6322DF300B002D2920 /* video.m4v in Resources */ = {isa = PBXBuildFile; fileRef = D7A72E6222DF300B002D2920 /* video.m4v */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,9 +31,11 @@
 
 /* Begin PBXFileReference section */
 		005C122435665DB777504314 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		09AE4C961B413994C5FF03E5 /* Holo.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Holo.podspec; path = ../Holo.podspec; sourceTree = "<group>"; };
+		09AE4C961B413994C5FF03E5 /* Holo.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Holo.podspec; path = ../Holo.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		11D14CB5F3E422F6B4535D9E /* Pods_Holo_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Holo_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BD078395FD5781FD37D1291 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		37418DBC22DF782200228F33 /* image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpg; sourceTree = "<group>"; };
+		37418DBE22DF783000228F33 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* Holo_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Holo_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,8 +51,6 @@
 		B193654992B015686DBA3F41 /* Pods-Holo_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holo_Tests.release.xcconfig"; path = "Target Support Files/Pods-Holo_Tests/Pods-Holo_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B35689795E8B67663D49DFE8 /* Pods_Holo_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Holo_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF5FB9F8D01BEA258D5BFDD4 /* Pods-Holo_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Holo_Tests.debug.xcconfig"; path = "Target Support Files/Pods-Holo_Tests/Pods-Holo_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D7A72E5822DF1B8F002D2920 /* fox.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fox.jpg; sourceTree = "<group>"; };
-		D7A72E6222DF300B002D2920 /* video.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.m4v; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +97,8 @@
 		607FACD21AFB9204008FA782 /* Example for Holo */ = {
 			isa = PBXGroup;
 			children = (
-				D7A72E6222DF300B002D2920 /* video.m4v */,
-				D7A72E5822DF1B8F002D2920 /* fox.jpg */,
+				37418DBE22DF783000228F33 /* video.mp4 */,
+				37418DBC22DF782200228F33 /* image.jpg */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -253,10 +253,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				37418DBF22DF783000228F33 /* video.mp4 in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
-				D7A72E5922DF1B8F002D2920 /* fox.jpg in Resources */,
-				D7A72E6322DF300B002D2920 /* video.m4v in Resources */,
+				37418DBD22DF782200228F33 /* image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,27 +2,16 @@
 //  ViewController.swift
 //  Holo
 //
-//  Created by tomoya.hirano on 07/17/2019.
-//  Copyright (c) 2019 tomoya.hirano. All rights reserved.
+//  Created by noppefoxwolf on 07/17/2019.
+//  Copyright (c) 2019 noppefoxwolf. All rights reserved.
 //
 
 import UIKit
 import AVFoundation
 
-#if targetEnvironment(simulator)
-import Holo
-typealias AVCaptureDevice = AnyCaptureDevice
-typealias AVCaptureDeviceInput = AnyCaptureDeviceInput
-typealias AVCaptureSession = AnyCaptureSessionContainer
-typealias AVCaptureVideoDataOutput = AnyCaptureVideoDataOutput
-typealias AVCaptureConnection = AnyCaptureConnection
-typealias AVCaptureVideoDataOutputSampleBufferDelegate = AnyCaptureVideoDataOutputSampleBufferDelegate
-typealias AVCaptureOutput = AnyCaptureOutput
-#endif
-
 class ViewController: UIViewController {
   private let displayLayer: AVSampleBufferDisplayLayer = .init()
-  private let device = AVCaptureDevice.default(for: .video)!
+  private lazy var device = AVCaptureDevice.default(for: .video)!
   private lazy var input = try! AVCaptureDeviceInput(device: device)
   private lazy var output: AVCaptureVideoDataOutput = {
     let output = AVCaptureVideoDataOutput()
@@ -48,6 +37,7 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     session.startRunning()
+    
   }
   
   override func viewDidLayoutSubviews() {
