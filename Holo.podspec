@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Holo'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'A short description of Holo.'
   s.description      = <<-DESC
 TODO: Add long description of the pod here.
@@ -13,4 +13,5 @@ TODO: Add long description of the pod here.
   s.social_media_url = 'https://twitter.com/noppefoxwolf'
   s.ios.deployment_target = '10.0'
   s.source_files = 'Holo/Classes/**/*'
+  s.swift_version = '5.0'
 end
