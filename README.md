@@ -29,6 +29,16 @@ HoloSettings.shared.mode = .video(Bundle.main.url(forResource: "video", withExte
 #endif
 ```
 
+## Screenshots
+
+**Before**
+
+![](https://github.com/noppefoxwolf/Holo/blob/master/.github/1.gif)
+
+**After**
+
+![](https://github.com/noppefoxwolf/Holo/blob/master/.github/2.gif)
+
 ## Requirements
 
 ## Installation
