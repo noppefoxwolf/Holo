@@ -30,5 +30,14 @@ public class AnyCaptureInput {
   init(source: Source) {
     self.source = source
   }
+  
+  open var ports: [AVCaptureInput.Port] {
+    switch source {
+    case .input(let input):
+      return input.ports
+    case .simurator(let input):
+      return []
+    }
+  }
 }
 
