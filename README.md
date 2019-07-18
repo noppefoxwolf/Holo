@@ -60,4 +60,4 @@ Holo is available under the MIT license. See the LICENSE file for more info.
 
 ## Thanks
 
-Example Video from [File Example](https://file-examples.com/index.php).
+Example files from [File Example](https://file-examples.com/index.php).
