@@ -194,6 +194,15 @@ public class AnyCaptureDevice {
     }
   }
   
+  open var position: AnyCaptureDevice.Position {
+    switch source {
+    case .simurator:
+      return .front
+    case .device(let device):
+      return device.position
+    }
+  }
+  
   init(captureDevice: CaptureDeviceSimurator) {
     source = .simurator(captureDevice)
   }
@@ -206,4 +215,60 @@ public class AnyCaptureDevice {
 
 extension AnyCaptureDevice {
   public typealias Position = AVCaptureDevice.Position
+}
+
+extension AnyCaptureDevice {
+  public typealias DiscoverySession = AnyDiscoverySession
+  
+  @available(iOS 10.0, *)
+  open class AnyDiscoverySession {
+    enum Source {
+      case simurator(CaptureDeviceSimurator.DiscoverySessionSimurator)
+      case discoverySession(AVFoundation.AVCaptureDevice.DiscoverySession)
+    }
+    internal let source: Source
+    
+    init(source: Source) {
+      self.source = source
+    }
+    
+    public convenience init(deviceTypes: [AVCaptureDevice.DeviceType], mediaType: AVMediaType?, position: AnyCaptureDevice.Position) {
+      switch mediaType {
+      case .some(.video):
+        self.init(source: .simurator(.init(deviceTypes: deviceTypes, mediaType: mediaType, position: position)))
+      default:
+        self.init(source: .discoverySession(AVCaptureDevice.DiscoverySession(deviceTypes: deviceTypes, mediaType: mediaType, position: position)))
+      }
+    }
+    
+    
+    open var devices: [AnyCaptureDevice] {
+      switch source {
+      case .simurator(let discoverySession):
+        return discoverySession.devices.compactMap({ AnyCaptureDevice.init(captureDevice: $0) })
+      case .discoverySession(let discoverySession):
+        return discoverySession.devices.compactMap({ AnyCaptureDevice.init(captureDevice: $0) })
+      }
+    }
+  }
+}
+
+extension CaptureDeviceSimurator {
+  class DiscoverySessionSimurator {
+    private let mediaType: AVMediaType
+    
+    init(deviceTypes: [AVCaptureDevice.DeviceType], mediaType: AVMediaType?, position: AnyCaptureDevice.Position) {
+      self.mediaType = mediaType ?? .video
+    }
+    
+    var devices: [CaptureDeviceSimurator] {
+      let def = AnyCaptureDevice.default(for: mediaType)
+      switch def?.source {
+      case .some(.simurator(let simurator)):
+        return [simurator]
+      default:
+        return []
+      }
+    }
+  }
 }

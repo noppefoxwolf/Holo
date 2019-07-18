@@ -11,14 +11,15 @@ These works for replacing the implementation at the time of simulator execution.
 ```swift
 #if targetEnvironment(simulator)
 import Holo
-typealias AVCaptureDevice = AnyCaptureDevice
-typealias AVCaptureDeviceInput = AnyCaptureDeviceInput
-typealias AVCaptureSession = AnyCaptureSessionContainer
-typealias AVCaptureVideoDataOutput = AnyCaptureVideoDataOutput
-typealias AVCaptureConnection = AnyCaptureConnection
-typealias AVCaptureVideoDataOutputSampleBufferDelegate = AnyCaptureVideoDataOutputSampleBufferDelegate
-typealias AVCaptureOutput = AnyCaptureOutput
-typealias AVCaptureInput =  AnyCaptureInput
+public typealias AVCaptureDevice = AnyCaptureDevice
+public typealias AVCaptureDeviceInput = AnyCaptureDeviceInput
+public typealias AVCaptureSession = AnyCaptureSessionContainer
+public typealias AVCaptureVideoDataOutput = AnyCaptureVideoDataOutput
+public typealias AVCaptureConnection = AnyCaptureConnection
+public typealias AVCaptureVideoDataOutputSampleBufferDelegate = AnyCaptureVideoDataOutputSampleBufferDelegate
+public typealias AVCaptureOutput = AnyCaptureOutput
+public typealias AVCaptureInput =  AnyCaptureInput
+public typealias AVDiscoverySession = AVCaptureDevice.AnyDiscoverySession
 #endif
 ```
 
