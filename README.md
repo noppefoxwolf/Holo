@@ -18,6 +18,7 @@ typealias AVCaptureVideoDataOutput = AnyCaptureVideoDataOutput
 typealias AVCaptureConnection = AnyCaptureConnection
 typealias AVCaptureVideoDataOutputSampleBufferDelegate = AnyCaptureVideoDataOutputSampleBufferDelegate
 typealias AVCaptureOutput = AnyCaptureOutput
+typealias AVCaptureInput =  AnyCaptureInput
 #endif
 ```
 
