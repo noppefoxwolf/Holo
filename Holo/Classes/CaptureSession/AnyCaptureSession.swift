@@ -165,10 +165,12 @@ public class AnyCaptureSessionContainer {
     }
   }
   
+  #if swift(>=5.1)
   @available(iOS 13.0, *)
   open var connections: [AnyCaptureConnection] {
     return session.connections.map({ AnyCaptureConnection(source: .connection($0)) })
   }
+  #endif
   
   @available(iOS 8.0, *)
   open func canAddConnection(_ connection: AnyCaptureConnection) -> Bool {

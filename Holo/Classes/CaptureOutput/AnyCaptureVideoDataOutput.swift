@@ -133,6 +133,7 @@ public class AnyCaptureVideoDataOutput: AnyCaptureOutput {
     }
   }
   
+  #if swift(>=5.1)
   @available(iOS 13.0, *)
   open var automaticallyConfiguresOutputBufferDimensions: Bool {
     switch source {
@@ -154,4 +155,5 @@ public class AnyCaptureVideoDataOutput: AnyCaptureOutput {
       return output.deliversPreviewSizedOutputBuffers
     }
   }
+  #endif
 }

@@ -41,3 +41,7 @@ public class AnyCaptureInput {
   }
 }
 
+extension AnyCaptureInput {
+  public typealias Port = AVCaptureInput.Port
+}
+
