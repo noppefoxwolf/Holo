@@ -247,3 +247,7 @@ public class AnyCaptureSessionContainer {
     return session.masterClock
   }
 }
+
+extension AnyCaptureSessionContainer {
+  public typealias Preset = AVCaptureSession.Preset
+}
