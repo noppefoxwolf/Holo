@@ -47,7 +47,7 @@ Holo is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Holo'
+pod 'Holo', git: 'git@github.com:noppefoxwolf/Holo.git', branch: 'master'
 ```
 
 ## Author
