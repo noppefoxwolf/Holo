@@ -203,3 +203,7 @@ public class AnyCaptureDevice {
     source = .device(captureDevice)
   }
 }
+
+extension AnyCaptureDevice {
+  public typealias Position = AVCaptureDevice.Position
+}
