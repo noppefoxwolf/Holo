@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController {
+class DisplayViewController: UIViewController {
   private let displayLayer: AVSampleBufferDisplayLayer = .init()
   private lazy var device = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .front)!
   private lazy var input = try! AVCaptureDeviceInput(device: device)
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
   }
 }
 
-extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
+extension DisplayViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
   func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
     displayLayer.enqueue(sampleBuffer)
   }
@@ -54,3 +54,4 @@ extension ViewController: AVCaptureVideoDataOutputSampleBufferDelegate {
     displayLayer.enqueue(sampleBuffer)
   }
 }
+

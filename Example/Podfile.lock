@@ -1,5 +1,5 @@
 PODS:
-  - Holo (0.1.0)
+  - Holo (0.1.1)
 
 DEPENDENCIES:
   - Holo (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Holo: 06770ff9f03bb13cdc0a8c32480c24539212ff35
+  Holo: 05632bfc19e77444ae6d5fb9bf6293cbd3d4f381
 
 PODFILE CHECKSUM: ba475539072498cddaa5b3edda49b2ed86571718
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.7.0
