@@ -12,6 +12,7 @@ class CaptureSessionSimurator {
   private lazy var displayLink: CADisplayLink = .init(target: self, selector: #selector(update))
   private(set) var inputs: [CaptureInputSimurator] = []
   private(set) var outputs: [CaptureOutputSimurator] = []
+  private lazy var thread: Thread = .init(target: self, selector: #selector(internalStartRunning), object: nil)
   
   @objc private func update(_ displayLink: CADisplayLink) {
     inputs.forEach({ $0._push() })
@@ -43,11 +44,16 @@ class CaptureSessionSimurator {
   }
   
   open func startRunning() {
-    displayLink.add(to: RunLoop.main, forMode: .default)
+    thread.start()
+  }
+  
+  @objc private func internalStartRunning() {
+    displayLink.add(to: .current, forMode: .default)
   }
   
   open func stopRunning() {
-    displayLink.remove(from: .main, forMode: .default)
+    thread.cancel()
+//    displayLink.remove(from: .current, forMode: .default)
   }
 }
 
